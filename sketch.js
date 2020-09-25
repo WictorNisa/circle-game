@@ -3,6 +3,7 @@ let circleRadius = 100;
 let x, y;
 let score = 0;
 let r, g, b;
+let level = 1;
   
 
 // Makes an function to see if the user has clicked on the circle or not
@@ -23,9 +24,7 @@ function mousePressed() {
     // Changes the RBG value of the circle when clicked to a new random RBG value
     r = random(255);
     g = random(255);
-    b = random(255);
-
-    
+    b = random(255);      
   }
 }
 
@@ -38,6 +37,7 @@ function setup() {
   x = random(windowWidth);
   y = random(windowHeight);
 
+    // adds random values to variable R, G, B that I then output in the fill function to circle
    r = random(255);
    g = random(255);
    b = random(255);
@@ -58,5 +58,11 @@ function draw() {
   textSize(30);
   text('Your Score: ' + score, 10, 30);
 
-
+  if (score == 10) {
+    background('white');
+    textSize(40)
+    fill('black');
+    text('Thanks for playing! :)', 500, 500);
+    
+  }
 }
